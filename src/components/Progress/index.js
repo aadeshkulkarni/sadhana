@@ -48,7 +48,7 @@ const SetProgress = () => {
     }, [])
 
 
-    return anyGoalForToday ? (<div className="card">
+    return (anyGoalForToday || !progress) ? (<div className="card">
        <h4 className="currentdate">Today's Sadhana</h4>
         {progress && progress?.map((record, index) => (
             record.status?.map(statusRecord => statusRecord.date == selectedDate &&

@@ -19,7 +19,7 @@ function App() {
     if(goals.length>0){
       setGStatus(true)
     }
-  },[])
+  },[pathname])
   
   useEffect(()=>{
     if(error.length>0){

@@ -81,6 +81,7 @@ a{
   grid-template-columns: 1fr 1fr;
 }
 .progress-status{
+  cursor: pointer;
   min-height:2rem;
   display:grid;
   padding:1rem;
@@ -128,8 +129,12 @@ border-top:1px solid #E0E0E0;
 }
 
 .acc-title{
+  cursor: pointer;
   padding:1rem;
   /* border:1px solid #222; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .acc-body{
   padding-top:1rem;
@@ -150,6 +155,7 @@ border-top:1px solid #E0E0E0;
 }
 
 .btn-primary{
+  cursor:pointer;
   color:#FFF;
   font-size:1rem;
   font-weight:600;
@@ -179,7 +185,7 @@ label{
   position:absolute;
   top:0;
   left:0;
-  width:90vw;
+  width:100vw;
   background: #FFF;  
   color:#333;
   padding:1.5rem;

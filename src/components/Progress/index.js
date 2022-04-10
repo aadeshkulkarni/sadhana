@@ -9,7 +9,6 @@ const SetProgress = () => {
     const [progress, SetProg] = useState(JSON.parse(localStorage.getItem('progress')) || []);
     const [anyGoalForToday, setToday] = useState(false)
     const [selectedDate, setDate] = useState(convertDate(new Date()));
-
     const updateProgress = (goal, date, status) => {
         const newProgress = progress?.map(record => {
             if (record.goal === goal) {
@@ -48,7 +47,7 @@ const SetProgress = () => {
     }, [])
 
 
-    return (anyGoalForToday || !progress) ? (<div className="card">
+    return (progress.length!==0 && anyGoalForToday) ? (<div className="card">
        <h4 className="currentdate">Today's Sadhana</h4>
         {progress && progress?.map((record, index) => (
             record.status?.map(statusRecord => statusRecord.date == selectedDate &&

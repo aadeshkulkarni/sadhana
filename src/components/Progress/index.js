@@ -39,6 +39,9 @@ const SetProgress = () => {
                     atleastOne = true;
                 }
             })})
+            if(!progress){
+                setToday(false)
+            }
             setToday(atleastOne)
         }
         check();

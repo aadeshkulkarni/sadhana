@@ -1,38 +1,187 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #FFF;
+  --secondary-color: #ffffff;
+  --primary-text-color: #222;
+  --secondary-text-color: #FFF;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  z-index:10;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.container, .screen{
+  width:100%;
+  height:100%;
+  min-height:100vh;
+  background:#EEE;
+  color:var(--primary-text-color);
+  display:flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position:relative;
+}
+header{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  
+  text-align: center;
+  text-transform: uppercase;
+}
+h1,h2,h3,h4,h5,h6{
+  margin:0.75rem;
+}
+h2.title{
+  color:var(--secondary-text-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight:400;
+  font-size:1.5rem;
+}
+a{
+  text-decoration: none;
+  color:#FFF;
+}
+.btn{
+  padding:1rem;
+  min-width:15rem;
+  font-size:1rem;
+  background:var(--primary-color);
+  color:var(--primary-text-color);
+  margin:0.5rem 0;
+  border-radius:3rem;
+  border:0;
+}
+.input {
+  padding:0.75rem 0.5rem;
+  font-size:1rem;
+  outline:none;
+  border:1px solid #E0E0E0;
+  border-radius:0.5rem;
+}
+.field-group{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:0.40rem;
+  padding:1rem 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.goal-accordion{
+  /* min-width:14rem;
+  width:21rem; */
+  /* padding: 0.5rem; */
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  /* border-bottom:1px solid #E0E0E0; */
+  /* background: var(--secondary-color); */
+}
+.dates{
+  display:grid;
+  padding:0.25rem;
+  font-size:0.9rem;
+  grid-template-columns: 1fr 1fr;
+}
+.progress-status{
+  min-height:2rem;
+  display:grid;
+  padding:1rem;
+  padding-bottom:0.80rem;
+  grid-template-columns: 2fr 10fr ;
+  background: var(--primary-color);
+  border-bottom:1px solid #E0E0E0;
+  align-items: center;
+}
+.progress-status:first-of-type{
+border-top:1px solid #E0E0E0;
+}
+.progress-status:last-of-type{
+  border-bottom:0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid-3{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.grid-date{
+  font-size:0.9rem;
+  min-height:6rem;
+  background: var(--primary-color); 
+  border:0.5px solid #F0F0F0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dropdown{
+  padding:0.5rem;
+  min-width:22rem;
+  width:22rem;
+  border:1px solid #222;
+  background:var(--primary-color);
+  color:var(--primary-text-color);
+  margin:0.5rem 0;
+  border-radius:0.5rem;
+}
+
+.currentdate{
+  padding:1rem;
+  padding-left:0.25rem;
+  /* text-align: center; */
+}
+
+.acc-title{
+  padding:1rem;
+  /* border:1px solid #222; */
+}
+.acc-body{
+  padding-top:1rem;
+}
+
+.header-bg{
+  z-index:0;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  border-bottom-left-radius:3rem;
+  border-bottom-right-radius:3rem;
+  height:50vh;
+  background: #0575E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1669bc,#021B79);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1669bc,#021B79); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.btn-primary{
+  color:#FFF;
+  font-size:1rem;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #0575E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1669bc,#021B79);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1669bc,#021B79); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.card{
+  background-color: var(--primary-color);
+  padding:0.5rem;
+  padding-bottom:1rem;
+  border-radius:1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width:21rem;
+}
+.complete{
+  color:#FFF;
+  background: #43C6AC;
+}
+label{
+  color:#999;
+}
+
+.error{
+  position:absolute;
+  top:0;
+  left:0;
+  width:90vw;
+  background: #FFF;  
+  color:#333;
+  padding:1.5rem;
+  text-align: center;
 }
